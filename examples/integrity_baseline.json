@@ -1,0 +1,10 @@
+{
+    "algorithm": "SHA-256",
+    "directory": "examples\\integrity_demo",
+    "files": {
+        "config.txt": "cf66b5965b83da4609b691ff09caa475676b5c55956b83bb67ca30c589491175",
+        "configs/firewall.conf": "dc7c4ffaef31be76f8fb7819a5fc32a4ef63ad6652e34212ebd098e83a4b08c4",
+        "notes.txt": "f04849b6904deacc94acc226f1c5adc37ec0e7d9b132fea7d94340ddf3f00dd9",
+        "report.txt": "d84bc1f9fb22e3713b87c29b1db95294579620902caa05e0ad2c15caa1c339af"
+    }
+}

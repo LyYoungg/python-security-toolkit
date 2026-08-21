@@ -7,21 +7,29 @@ This project is being developed to explore practical applications of secure prog
 > **Status:** Active development
 
 ## Planned Tools
-
-- Hash Checker
-- File Integrity Monitor
-- Log Analyzer
-- Password Auditor
-- Port Scanner
-- Network Monitor
-- Unified Command-Line Interface
+- [x] Hash Checker
+- [x] File Integrity Monitor
+- [ ] Log Analyzer
+- [ ] Password Auditor
+- [ ] Port Scanner
+- [ ] Network Monitor
+- [ ] Unified Command-Line Interface
 
 ## Current Development Stage
 
-The development environment and initial repository structure have been configured.
+## Current Development Stage
 
-The first utility under development is the SHA-256 Hash Checker.
+Two defensive security utilities are currently implemented:
 
+### SHA-256 Hash Checker
+
+Calculates SHA-256 file hashes with file validation, exception handling, and automated tests.
+
+### File Integrity Monitor
+
+Creates JSON-based known-good file baselines and detects unchanged, modified, newly introduced, and deleted files through SHA-256 comparison.
+
+The next planned component is the Log Analyzer.
 ## Project Goals
 
 The toolkit is designed to demonstrate:

@@ -1,0 +1,3 @@
+server_mode=production
+logging=enabled
+max_connections=100
