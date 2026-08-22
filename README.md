@@ -10,8 +10,8 @@ This project is being developed to explore practical applications of secure prog
 - [x] Hash Checker
 - [x] File Integrity Monitor
 - [x] Log Analyzer
-- [ ] Password Auditor
-- [ ] Port Scanner
+- [x] Password Auditor
+- [x] Port Scanner
 - [ ] Network Monitor
 - [ ] Unified Command-Line Interface
 
@@ -60,5 +60,11 @@ python-security-toolkit/
 └── requirements.txt
 
 ### Security Log Analyzer
-
 Parses synthetic authentication events, summarizes login activity, tracks failed authentication attempts by source IP, and generates threshold-based alerts for suspicious patterns.
+
+
+### Password Auditor
+Evaluates password-policy characteristics locally, identifies common weaknesses and predictable patterns, and generates security recommendations without storing or displaying submitted passwords.
+
+### Authorized Port Scanner
+Performs controlled TCP connection checks against localhost and authorized private IPv4 systems. Public targets and excessive scan ranges are deliberately blocked by the application.

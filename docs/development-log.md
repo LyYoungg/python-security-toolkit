@@ -264,3 +264,157 @@ This phase strengthened my understanding of:
 ### Next Step
 
 Develop a Password Auditor that evaluates password-policy characteristics without storing or transmitting plaintext credentials.
+
+---
+
+## Phase 5 — Password Auditor
+
+### Objective
+
+Develop a local password-policy auditing utility that evaluates password characteristics and provides actionable security recommendations without storing submitted passwords.
+
+### Security Design
+
+Interactive password entry uses Python's `getpass` functionality so submitted passwords are not echoed to the terminal.
+
+The tool does not write submitted passwords to disk, transmit them over a network, or include them in generated reports.
+
+### Audit Checks
+
+The current implementation evaluates:
+
+- Minimum password length
+- Recommended password length
+- Uppercase characters
+- Lowercase characters
+- Numeric characters
+- Symbols
+- Common-password matches
+- Simple predictable sequences
+- Repeated consecutive characters
+
+### Results
+
+Rather than assigning an arbitrary numerical security percentage, the tool reports individual policy checks and classifies the result as:
+
+- `STRONG`
+- `ACCEPTABLE`
+- `NEEDS IMPROVEMENT`
+
+Failed checks generate specific recommendations.
+
+### Limitations
+
+Password composition rules alone cannot accurately measure resistance to every password-guessing strategy.
+
+The common-password dataset used by this educational implementation is intentionally small, and the sequence detector uses simple heuristics.
+
+A production password-security system should consider current organizational policy, compromised-password screening, secure authentication architecture, rate limiting, and multi-factor authentication.
+
+### Automated Testing
+
+Tests validate:
+
+- Common-password detection
+- Minimum length requirements
+- Character-class requirements
+- Sequence detection
+- Repeated-character detection
+- Strong-password classification
+- Recommendation generation
+
+### What I Learned
+
+This phase strengthened my understanding of:
+
+- Secure interactive input
+- Password-policy evaluation
+- Python string processing
+- Character classification
+- Security heuristics
+- Boolean policy evaluation
+- Actionable security reporting
+- Limitations of password-strength estimation
+
+### Next Step
+
+Develop a controlled Port Scanner to introduce Python socket programming and network-service discovery within authorized systems and lab environments.
+---
+
+## Phase 8 — Authorized Port Scanner
+
+### Objective
+
+Develop a controlled TCP port scanner for identifying listening services on localhost and authorized private-network systems.
+
+### Network Method
+
+The scanner uses Python TCP sockets to attempt connections to a user-selected range of ports.
+
+A successful TCP connection is reported as `OPEN`. An unsuccessful connection is reported as `CLOSED` by this educational implementation.
+
+### Authorization Controls
+
+The scanner deliberately restricts targets to:
+
+- Localhost
+- IPv4 loopback addresses
+- Private IPv4 networks
+
+Public IP addresses are rejected before scanning begins.
+
+The scanner also limits the maximum requested port range to reduce accidental high-volume scanning.
+
+### Controlled Demonstration
+
+A temporary Python HTTP server was bound to `127.0.0.1` on TCP port `8000`.
+
+The scanner successfully identified port `8000` as open while the service was running.
+
+After stopping the local HTTP server, the scanner identified the same port as closed.
+
+### Limitations
+
+This utility is intentionally simpler than professional scanners such as Nmap.
+
+The current implementation does not attempt:
+
+- Operating-system fingerprinting
+- Service-version detection
+- SYN scanning
+- Firewall evasion
+- Stealth techniques
+- Vulnerability exploitation
+
+The purpose is to demonstrate TCP socket programming and basic service discovery in a controlled environment.
+
+### Automated Testing
+
+Tests validate:
+
+- Localhost handling
+- Private IPv4 authorization
+- Public-target blocking
+- Invalid target handling
+- Port-range validation
+- Reversed ranges
+- Excessive range rejection
+- Socket result handling
+
+### What I Learned
+
+This phase strengthened my understanding of:
+
+- TCP sockets
+- IPv4 addressing
+- TCP ports
+- Connection timeouts
+- Private address ranges
+- Network authorization boundaries
+- Defensive service discovery
+- Network error handling
+
+### Next Step
+
+Develop a Network Monitor that reports local network-interface status and traffic statistics without capturing packet contents.
+
