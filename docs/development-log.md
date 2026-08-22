@@ -418,3 +418,86 @@ This phase strengthened my understanding of:
 
 Develop a Network Monitor that reports local network-interface status and traffic statistics without capturing packet contents.
 
+---
+
+## Phase 9 — Local Network Monitor
+
+### Objective
+
+Develop a local network-observability utility capable of reporting interface status, addressing information, and operating-system network traffic counters.
+
+### Implementation
+
+The Network Monitor uses Python's `socket` module and the `psutil` system-utilities library.
+
+The tool gathers:
+
+- System hostname
+- Primary local IPv4 address
+- Available network interfaces
+- Interface UP/DOWN state
+- Reported interface speed
+- IPv4 addresses
+- IPv6 addresses
+- Bytes transmitted and received
+- Packet counts
+- Interface error counters
+- Packet-drop counters
+
+### Privacy and Scope
+
+The current implementation does not capture packet payloads or inspect user communications.
+
+Traffic statistics are obtained from operating-system counters rather than packet interception.
+
+### Observability Demonstration
+
+Running the utility at different times produced changing byte and packet counters as network activity occurred, demonstrating that the values are gathered dynamically from the local operating system.
+
+### Dependency Management
+
+The `psutil` library was introduced as the toolkit's first runtime dependency and added to `requirements.txt` so the project's environment can be recreated consistently.
+
+### Limitations
+
+This utility provides a local system-level overview rather than full packet or flow analysis.
+
+It does not currently provide:
+
+- Packet capture
+- Protocol decoding
+- Remote traffic inspection
+- Deep packet inspection
+- Intrusion detection
+- Historical traffic storage
+
+Future versions could introduce sampling and historical comparison without exposing packet contents.
+
+### Automated Testing
+
+Tests validate:
+
+- Human-readable byte conversion
+- Network identity output structure
+- Interface information structure
+- Traffic-statistics structure
+- Nonnegative network counters
+
+Tests avoid expecting specific interface names or addresses so they remain portable across different systems.
+
+### What I Learned
+
+This phase strengthened my understanding of:
+
+- Network interfaces
+- IPv4 and IPv6
+- Traffic counters
+- Interface state
+- Network observability
+- Python system APIs
+- Third-party dependency management
+- Portable automated testing
+
+### Next Step
+
+Integrate all toolkit components behind a unified command-line interface.

@@ -12,7 +12,7 @@ This project is being developed to explore practical applications of secure prog
 - [x] Log Analyzer
 - [x] Password Auditor
 - [x] Port Scanner
-- [ ] Network Monitor
+- [x] Network Monitor
 - [ ] Unified Command-Line Interface
 
 ## Current Development Stage
@@ -68,3 +68,6 @@ Evaluates password-policy characteristics locally, identifies common weaknesses 
 
 ### Authorized Port Scanner
 Performs controlled TCP connection checks against localhost and authorized private IPv4 systems. Public targets and excessive scan ranges are deliberately blocked by the application.
+
+### Local Network Monitor
+Reports local network identity, interface state, IPv4/IPv6 addressing, interface speed, and operating-system traffic counters without capturing packet contents.
