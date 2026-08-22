@@ -210,3 +210,57 @@ This phase strengthened my understanding of:
 ### Next Step
 
 Develop a security-focused Log Analyzer capable of parsing authentication events and identifying patterns such as repeated failed login attempts.
+---
+
+## Phase 4 — Security Log Analyzer
+
+### Objective
+
+Develop a defensive authentication-log analysis utility capable of parsing structured security events and identifying repeated failed-login activity.
+
+### Detection Method
+
+Authentication events are parsed into structured fields containing timestamps, event types, usernames, and source IP addresses.
+
+Failed authentication events are grouped by source IP address. Sources meeting or exceeding a configurable failure threshold generate an alert for further investigation.
+
+### Parser Resilience
+
+Malformed entries are recorded as parser warnings rather than terminating analysis. This allows valid security events to continue being processed even when the source log contains invalid data.
+
+### Security Interpretation
+
+Repeated authentication failures may indicate password guessing, misconfiguration, forgotten credentials, automated processes, or malicious activity.
+
+The detector therefore reports suspicious patterns rather than classifying a source as malicious.
+
+### Automated Testing
+
+Tests validate:
+
+- Authentication-event parsing
+- Invalid-entry rejection
+- IPv4 validation
+- Failed-login counting
+- Detection thresholds
+- Non-alerting activity below the threshold
+- Invalid-line tracking
+- Missing-file handling
+
+### What I Learned
+
+This phase strengthened my understanding of:
+
+- Security log parsing
+- Regular expressions
+- Authentication events
+- Python Counter objects
+- Event aggregation
+- Detection thresholds
+- Source-IP analysis
+- Parser resilience
+- Rule-based security detection
+
+### Next Step
+
+Develop a Password Auditor that evaluates password-policy characteristics without storing or transmitting plaintext credentials.

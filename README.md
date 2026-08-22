@@ -9,7 +9,7 @@ This project is being developed to explore practical applications of secure prog
 ## Planned Tools
 - [x] Hash Checker
 - [x] File Integrity Monitor
-- [ ] Log Analyzer
+- [x] Log Analyzer
 - [ ] Password Auditor
 - [ ] Port Scanner
 - [ ] Network Monitor
@@ -58,3 +58,7 @@ python-security-toolkit/
 ├── LICENSE
 ├── README.md
 └── requirements.txt
+
+### Security Log Analyzer
+
+Parses synthetic authentication events, summarizes login activity, tracks failed authentication attempts by source IP, and generates threshold-based alerts for suspicious patterns.
